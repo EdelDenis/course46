@@ -2,32 +2,59 @@
 
 // -----------Навигация по DOM - элементам, data-атрибуты, преимущество for/of--------
 
-// console.log(document.body); //-- в консоли боди элемент 
+// console.log(document.body); - // в консоле боди єлемент
 
-//console.log(document.documentElement); //- в консоле весь хтмл документ
+// console.log(document.documentElement);  // - в консоле хтмл целиком
 
-//console.log(document.body.childNodes); - в консоле узлы которые являются детьми у боди
+// console.log(document.body.childNodes); // - получаем детей боди
 
-// console.log(document.body.firstChild); // - берет первый элемент боди
-console.log(document.body.firstElementChild); // - берет первый элемент боди
-// console.log(document.body.lastChild); // - берет последний элемент боди
-console.log(document.body.lastElementChild); // - берет последний элемент боди
+// console.log(document.body.firstChild); // - первый ребенок боди 
 
-// console.log(document.querySelector("#current").parentNode.parentNode) - взять родительский ноду
-console.log(document.querySelector("#current").parentElement) //- взять родительский єлемент
+// console.log(document.body.lastChild); // - последний ребенок боди
 
-// ----------------- DATA-атрибуты -------------------
+//  ----------------------- 
 
-// console.log(document.querySelector(`[data-current="3"]`).nextSibling.nextSibling); - взять следующий после отмеченного єлемента(нода)
-console.log(document.querySelector(`[data-current="3"]`).nextElementSibling); // - взять следующий после отмеченного єлемента
+console.log(document.querySelector("#current").parentNode) // - получим элемент с классом фирст
+                                                           // - если продублировать команду будет родитель от родителя
 
-// console.log(document.querySelector(`[data-current="3"]`).previousSibling); - взять предидущий после отмеченного єлемента(нода)
-console.log(document.querySelector(`[data-current="3"]`).previousElementSibling); // - взять предидущий после отмеченного єлемента
+                                                           
+// DATA-CURRENT----------------- атрибут DATA-
+
+// console.log(document.querySelector(`[data-current="3"]`).nextSibling);// - выведет след текст ноду
+
+// console.log(document.querySelector(`[data-current="3"]`).previousSibling); 
+
+
+
+// --------- ЄЛЕМЕНТІ БЕЗ НОД
+
+// console.log(document.querySelector(`[data-current="3"]`).nextElementSibling); // выведед след элемент после отмеченного
+// console.log(document.querySelector(`[data-current="3"]`).previousElementSibling); // выведет предидущий элемент
+
+//console.log(document.querySelector("#current").parentElement); // - выведет родителя отмеченного элемента 
+
+// console.log(document.body.firstElementChild); // - выведет первого ребенка БОДИ
+
+// console.log(document.body.lastElementChild); // - последний єлемент боди
+
+// перебрать всех чайд нодсов и убрать текстовіе ноді 
 
 for (let node of document.body.childNodes) {
-    if (node.nodeName == "#text") {
+    if(node.nodeName == "#text"){
         continue;
     }
 
     console.log(node);
 }
+
+
+
+
+
+
+
+
+
+
+
+
